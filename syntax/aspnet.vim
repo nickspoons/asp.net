@@ -37,7 +37,7 @@ unlet b:current_syntax
 syn cluster htmlPreProc add=aspnetServerScript,aspnetSpecialTag,aspDataBindRegion,aspnetDataBindInString
 
 " Handles <%# %> tags within a string
-syn match aspnetDataBindInString /".*<%#.*%>.*"/
+syn match aspnetDataBindInString /".*<%[#=].*%>.*"/
 
 " ASP.NET Tags
 " EXAMPLE:
@@ -92,6 +92,8 @@ syn keyword aspnetServerControlArg contained runat id OnSelectedIndexChanged Aut
 " Add these new custom tags to the rest of the HTML markup rules
 syn cluster htmlTagNameCluster add=aspnetServerControl
 syn cluster htmlArgCluster add=aspnetServerControlArg
+
+syn region htmlComment start=+<%--+ end=+--%>+ contains=@Spell
 
 "
 " Link the highlighting up
