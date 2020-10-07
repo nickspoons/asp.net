@@ -81,7 +81,7 @@ syn region aspnetServerScript matchgroup=Special start=+<script[^>]*type="\=text
 " NOTE:    I've set this up to only work if runat="server" is present since I
 "          always forget to put that in, and then wonder why things don't
 "          work.
-syn match aspnetServerControl contained +asp:\w\+\(.*runat="\=server"\=\)\@=+ contains=aspnetServerControlName,aspnetServerControlPunct
+syn match aspnetServerControl contained +asp:\w\+\%(\_.\{-}runat="\=server"\=\)\@=+ contains=aspnetServerControlName,aspnetServerControlPunct
 syn match aspnetServerControl contained +/asp:\w\++ contains=aspnetServerControlName,aspnetServerControlPunct
 syn match aspnetServerControlPunct contained +:+
 syn keyword aspnetServerControlName contained Literal PlaceHolder Xml AdRotator Button Calendar CheckBox
