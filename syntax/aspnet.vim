@@ -26,8 +26,6 @@ unlet b:current_syntax
 syn include @aspnetAddjavascript $VIMRUNTIME/syntax/javascript.vim
 unlet b:current_syntax
 
-"
-
 if version < 600
   source <sfile>:p:h/html.vim
 else
@@ -53,6 +51,11 @@ syn match aspnetSpecialTagPunct contained       +[@"'=]+
 syn region aspnetDataBindRegion keepend contained matchgroup=Function start=+<%#+ end=+%>+ contains=@aspnetAddCS,aspnetDataBindRegionPunct
 syn match aspnetDataBindRegion contained +#[^"']\+\.*+ contains=@aspnetAddCS,aspnetDataBindRegionPunct display
 syn match aspnetDataBindRegionPunct contained +#+
+
+" This line from $VIMRUNTIME/syntax/html.vim must be reset, prioritising it over
+" htmlTagError. Otherwise a closing tag following a databind region is
+" highlighted as an htmlTagError.
+syn match   htmlTagN     contained +</\s*[-a-zA-Z0-9]\++hs=s+2 contains=htmlTagName,htmlSpecialTagName,@htmlTagNameCluster
 
 " @ directives
 " NOTE: we skip over highlighting the @ and use aspnetSpecialTagPunct to give it a
@@ -109,5 +112,3 @@ hi def link aspnetServerControlPunct    Delimiter
 hi def link aspnetServerControlArg      Type
 
 let b:current_syntax = "aspnet"
-
-
