@@ -35,7 +35,7 @@ else
 endif
 unlet b:current_syntax
 
-syn cluster htmlPreProc add=aspnetServerScript,aspnetSpecialTag,aspDataBindRegion,aspnetDataBindInString
+syn cluster htmlPreProc add=aspnetServerScript,aspnetSpecialTag,aspnetDataBindRegion,aspnetDataBindInString
 
 " Handles <%# %> tags within a string
 syn match aspnetDataBindInString /".*<%[#=].*%>.*"/
