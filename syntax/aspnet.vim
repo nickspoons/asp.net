@@ -1,8 +1,9 @@
 " Vim syntax file
-" Language:     ASP.NET pages with C# and Javascript
-" Maintainer:   Mekonnen Biruh <biruh.t@gmail.com>
-" Last Change:  $Id: aspnet.vim,v 1.0 2011/03/03 11:55:00 $
-" Filenames:    *.aspx,*.ascx,*.asmx
+" Language:            ASP.NET pages with C# and Javascript
+" Maintainer:          Nick Jensen <nickspoon@gmail.com>
+" Previous Maintainer: Mekonnen Biruh <biruh.t@gmail.com>
+" URL:                 https://github.com/nickspoons/asp.net
+" Filenames:           *.aspx,*.ascx,*.asmx
 "
 " CREDITS: Mark Feeney for the original. Stacey Abshire for correctly
 "          handle code in a DataBind region.
