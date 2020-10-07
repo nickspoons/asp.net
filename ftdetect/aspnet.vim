@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.as[cp]x set filetype=aspnet.html
+autocmd BufRead,BufNewFile *.as[cp]x set filetype=aspnet
